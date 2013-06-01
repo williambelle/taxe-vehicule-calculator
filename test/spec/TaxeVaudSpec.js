@@ -6,7 +6,7 @@ describe("TaxeVaud", function() {
     taxeVD = new TaxeVaud();
   });
 
-  describe("when TaxesVaud is used to calculate tax for a car", function() {
+  describe("when TaxeVaud is used to calculate tax for a car", function() {
     
     it("should be able to throw an exception with negative power", function() { 
       expect( function() {taxeVD.car( 1300, -10 )} ).toThrow("Negative weight or power");
@@ -32,7 +32,7 @@ describe("TaxeVaud", function() {
     });
   });
   
-  describe("when TaxesVaud is used to calculate tax for a truck", function() {
+  describe("when TaxeVaud is used to calculate tax for a truck", function() {
     
     it("should be able to throw an exception with weigth less than 3500", function() { 
       expect( function() {taxeVD.truck( 3400, 2 )} ).toThrow("You have a car");
@@ -55,9 +55,25 @@ describe("TaxeVaud", function() {
       for (var i = 0; i < weights.length; i++) {
         expect(taxeVD.truck(weights[i], euroNormes[i])).toEqual(totals[i]);
       }      
-    }); 
-    
-    
+    });  
   });
+  
+  describe("when TaxeVaud is used to calculate tax for a motorcycle", function() {
+    
+    it("should be able to throw an exception with negative cm3", function() { 
+      expect( function() {taxeVD.motorcycle( -100 )} ).toThrow("Negative cm3");
+    });
+    
+    it("should be able to calculate tax", function() {
+      
+      var cm3    = [ 35, 50, 75, 100, 101, 250, 750, 1000];
+      var totals = [ 65, 65, 87,  87, 109, 131, 241,  285];
+      
+      for (var i = 0; i < cm3.length; i++) {
+        expect(taxeVD.motorcycle( cm3[i] )).toEqual(totals[i]);
+      }      
+    });
+  });
+  
   
 });

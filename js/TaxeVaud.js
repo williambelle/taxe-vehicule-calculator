@@ -49,3 +49,20 @@ TaxeVaud.prototype.truck = function( weight, euroNorme ){
   
   return total;
 };
+
+TaxeVaud.prototype.motorcycle = function( cm3 ){
+  
+  var total = 87;
+  
+  if ( cm3 < 0 ) {
+    throw new Error("Negative cm3"); 
+  }
+  
+  if ( cm3 <= 50 ){
+    total = 65;
+  } else if ( cm3 > 100){
+    total += (Math.ceil(cm3/100)-1) * 22; 
+  }
+  
+  return total;  
+};
