@@ -25,3 +25,27 @@ TaxeVaud.prototype.car = function( weight, power ){
 
   return total;
 };
+
+TaxeVaud.prototype.truck = function( weight, euroNorme ){
+  
+  var total = 560;
+  
+  if ( weight < 3500 ) {
+    throw new Error("You have a car"); 
+  } else if ( euroNorme < 0){
+    throw new Error("Negative euro norme"); 
+  }
+  
+  var diff = weight-4000;
+  if ( diff > 0 ){
+    total += Math.ceil(diff/1000) * 140; 
+  }
+  
+  if ( euroNorme === 3 ){
+    total -= total*20/100;
+  } else if ( euroNorme > 3 ){
+    total -= total*35/100;  
+  } 
+  
+  return total;
+};
