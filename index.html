@@ -41,7 +41,7 @@
         <h2>Taxe voitures</h2>
 
         <form action="#" id="cartaxform" method="get">
-          
+
           <ul data-role="listview" data-inset="true">
             <li data-role="fieldcontain">
               <label class="ui-input-text" for="weight">Poids</label>
@@ -52,14 +52,59 @@
               <input type="number" name="power" value=""  />
             </li>
           </ul>
-          
+
           <a href="#" id="carTax" data-role="button">Calculer</a>
 
-          <ul class="result" data-role="listview" data-inset="true" style="display:none;">
+          <ul class="result-container" data-role="listview" data-inset="true" style="display:none;">
             <li data-role="list-divider" data-theme="a" data-divider-theme="a">
               Résultat
             </li>
-            <li id="resultat"></li>
+            <li class="result"></li>
+          </ul>
+        </form>
+      </div>
+    </div>
+
+    <div data-role="page" id="truck" data-theme="a">
+      <div data-role="header" data-position="inline">
+        <a href="#" data-icon="back" data-rel="back" data-iconpos="notext" data-direction="reverse">Back</a>
+        <h1>TODO</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+      </div>
+      <div data-role="content" data-theme="a" >
+        <h2>Taxe camions</h2>
+
+        <form action="#" id="trucktaxform" method="get">
+
+          <ul data-role="listview" data-inset="true">
+            <li data-role="fieldcontain">
+              <label class="ui-input-text" for="weight">Poids</label>
+              <input type="number" name="weight" value=""  />
+            </li>
+            <li data-role="fieldcontain">
+              <fieldset data-role="controlgroup">
+                <legend>
+                  Norme Euro
+                </legend>
+                <input type="radio" name="euroNorme" id="radio-choice-1" value="0" checked="checked" />
+                <label for="radio-choice-1">0 - 2</label>
+
+                <input type="radio" name="euroNorme" id="radio-choice-2" value="3" />
+                <label for="radio-choice-2">3</label>
+
+                <input type="radio" name="euroNorme" id="radio-choice-3" value="4" />
+                <label for="radio-choice-3">4 et plus</label>
+              </fieldset>
+            </li>
+          </ul>
+
+          <a href="#" id="truckTax" data-role="button">Calculer</a>
+
+          <ul class="result-container" data-role="listview" data-inset="true" style="display:none;">
+            <li data-role="list-divider" data-theme="a" data-divider-theme="a">
+              Résultat
+            </li>
+            <li class="result"></li>
           </ul>
         </form>
       </div>
