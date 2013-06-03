@@ -10,6 +10,7 @@
         $('#cartaxform [name=power]').val()
       );  
       $('#resultat').text(result);
+      $('.result').show();
 
     });
 
