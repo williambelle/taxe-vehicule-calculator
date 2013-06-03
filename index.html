@@ -25,7 +25,7 @@
             <a href="#truck">Camions</a>
           </li>
           <li>
-            <a href="#motocycle">Motos</a>
+            <a href="#motorcycle">Motos</a>
           </li>
         </ul>
       </div>
@@ -99,6 +99,36 @@
           </ul>
 
           <a href="#" id="truckTax" data-role="button">Calculer</a>
+
+          <ul class="result-container" data-role="listview" data-inset="true" style="display:none;">
+            <li data-role="list-divider" data-theme="a" data-divider-theme="a">
+              Résultat
+            </li>
+            <li class="result"></li>
+          </ul>
+        </form>
+      </div>
+    </div>
+    
+    <div data-role="page" id="motorcycle" data-theme="a">
+      <div data-role="header" data-position="inline">
+        <a href="#" data-icon="back" data-rel="back" data-iconpos="notext" data-direction="reverse">Back</a>
+        <h1>TODO</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+      </div>
+      <div data-role="content" data-theme="a" >
+        <h2>Taxe motos</h2>
+
+        <form action="#" id="motorcycletaxform" method="get">
+
+          <ul data-role="listview" data-inset="true">
+            <li data-role="fieldcontain">
+              <label class="ui-input-text" for="cm3">Cylindrée</label>
+              <input type="number" name="cm3" value=""  />
+            </li>
+          </ul>
+
+          <a href="#" id="motorcycleTax" data-role="button">Calculer</a>
 
           <ul class="result-container" data-role="listview" data-inset="true" style="display:none;">
             <li data-role="list-divider" data-theme="a" data-divider-theme="a">
